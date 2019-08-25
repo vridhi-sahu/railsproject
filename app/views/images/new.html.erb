@@ -1,0 +1,19 @@
+<h3> New Image Upload </h3>
+<%= form_for @image, url: images_path(@image), html: { multipart: true } do |f| %>
+  <div id="error_explain">
+    <h2><%=pluralize(@image.errors.count, "error") %> prohibited this image from being posted:</h2>
+    <ul>
+    <% @image.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    <% end %>
+  </ul>
+  </div>
+  <div class = "field">
+    <%= f.label :picture,"Upload" %><br>
+    <%= f.file_field :picture, required: true %><br>
+  </div>
+  <div class = "field">
+    <%= f.submit %><br>
+  </div>
+<% end %>
+

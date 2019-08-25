@@ -1,0 +1,12 @@
+<div class="images index">
+<h2>Images</h2>
+<%= link_to("Add Image", new_image_path) %><br />
+<%= link_to("Back to Home Page", root_path) %>
+<h3>Click to view </h3>
+<% @images.each do |image| %>
+  <%= image_tag(image.picture.url(:thumb), alt: "No image found") %>
+  <%= link_to(image.picture_file_name.to_s, image.picture(:original)) %>
+  
+<% end %>
+<br/>
+</div>

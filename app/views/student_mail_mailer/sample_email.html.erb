@@ -1,0 +1,40 @@
+<style>
+  
+  table{
+    margin: 10px 2px 2px 2px;
+  }
+  th{ 
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid rgb(1,0.5,0,0.8);
+    text-transform: capitalise;
+  }
+  td{
+    padding: 5px;
+    margin: 5px;
+    text-align: right;
+    border: 1px solid rgb(0.3,1,0,0.5);
+  }
+
+</style>
+<h1>Student records</h1>
+<p>
+  Sample mail sent using smtp.
+</p>
+<table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>E-Mail</th>
+      <th>Phone Number</th>
+    </tr>
+
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.id %></td>
+        <td><%= student.name %></td>
+        <td><%= student.email %></td>
+        <td><%= student.phone %></td>
+      </tr>
+    <% end %>
+</table>
