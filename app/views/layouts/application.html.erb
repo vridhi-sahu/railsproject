@@ -8,14 +8,18 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <% if !flash.empty? %>
-      <% flash.each do |key, value| %>
-        <%= content_tag :div, value, class: "flash text-#{key}" %>
+<body>
+    <div class="container">
+      <% if !flash.empty? %>
+        <div id="flash"> 
+          <% flash.keys.each do |f| %> 
+            <% @class = (f=="error")? "#{f} text-danger" : "#{f} text-success" %>
+            <div class = "<%= @class %>" >
+              <%= flash[f] %>
+            </div>
+          <% end %>   
+        </div>
       <% end %>
-    <% end %>
-    <div class= "container">
       <%= yield %>
     </div>
   </body>

@@ -11,6 +11,7 @@ class ImagesController < ApplicationController
       flash[:notice] = "Image has been uploaded successfully"
       redirect_to images_path
     else
+      flash[:error] = "Image could not be uploaded"
       render :new
     end
   end

@@ -4,9 +4,11 @@
 <%= link_to("Back to Home Page", root_path) %>
 <h3>Click to view </h3>
 <% @images.each do |image| %>
+  <figure>
   <%= image_tag(image.picture.url(:thumb), alt: "No image found") %>
   <%= link_to(image.picture_file_name.to_s, image.picture(:original)) %>
-  
+  <figcaption><%= image.picture_file_name%></figcaption>
+  </figure>
 <% end %>
 <br/>
 </div>

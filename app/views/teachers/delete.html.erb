@@ -1,8 +1,8 @@
 <%= link_to("<< Back to list", {:action => "index"}, :class =>"back-link") %>
 <div class = "teachers delete">
 <h2>Delete Subject</h2>
-<%= form_for(:teacher, :url => {:action => "destroy", :id => @teacher.id}) do |f| %>
-  <p>Are you sure ></p>
+<%= form_for @teacher, :url => teachers_path(@teacher) do |f| %>
+  <p>Are you sure ?</p>
   <p><%=teacher.name %></p>
   <div class = "form-buttons">
   <%= submit_tag("Delete Teacher") %>

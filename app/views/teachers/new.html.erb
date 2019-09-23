@@ -1,15 +1,16 @@
 <%= link_to("<< Back to index list", {:action => "index"}, :class => "back_to_link") %>
 <div class = "teachers new">
   <h2>Create teachers</h2>
-  <%= form_for(:teacher, :url => {:action => "create"}) do |f| %>
+  <%= form_with model: @teacher, :url => teachers_path(@teacher) do |f| %>
+
     <table summary="Teacher form fields">
     <tr>
       <th>Name</th>
-      <td><%= f.text_field(:name) %></td>
+      <td><%= f.text_field :name, required: true  %></td>
     </tr>
     <tr>
       <th>Email</th>
-      <td><%= f.text_field(:email) %></td>
+      <td><%= f.text_field :email, required: true  %></td>
     </tr>
     </table>
     <div class="form-buttons">

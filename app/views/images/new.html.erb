@@ -1,3 +1,6 @@
+<div>
+  <%= link_to("Back",root_path, class: "btn btn-primary") %>
+</div>
 <h3> New Image Upload </h3>
 <%= form_for @image, url: images_path(@image), html: { multipart: true } do |f| %>
   <div id="error_explain">
@@ -8,11 +11,11 @@
     <% end %>
   </ul>
   </div>
-  <div class = "field">
+  <div class = "form-group">
     <%= f.label :picture,"Upload" %><br>
     <%= f.file_field :picture, required: true %><br>
   </div>
-  <div class = "field">
+  <div class = "form-group">
     <%= f.submit %><br>
   </div>
 <% end %>

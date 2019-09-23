@@ -12,6 +12,7 @@ class TeachersController < ApplicationController
       flash[:notice] = "Teacher record created"
       redirect_to(:action => "index")
     else
+      flash[:error] = "INVALID"
       render("new")
     end
   end
@@ -29,7 +30,7 @@ class TeachersController < ApplicationController
     if @teacher.update_attributes(teacher_params)
       redirect_to(:action => "show", :id => @teacher.id)
     else
-      flash[:notice] = "Validation error"
+      flash[:error] = "Validation error"
       render("edit") 
     end
   end

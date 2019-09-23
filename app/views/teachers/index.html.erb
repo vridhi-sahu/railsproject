@@ -22,7 +22,7 @@
       <td class = "actions">
         <%= link_to("Show", teacher_path(teacher), class: "action show") %>
         <%= link_to("Edit", edit_teacher_path(teacher), class: "action edit") %>
-        <%= link_to("Delete",teacher_path(teacher), method: :delete, class: "action delete") %>
+        <%= link_to("Delete",teacher_path(teacher), data: {confirm: "ARE YOU SURE?"}, method: :delete, class: "action delete") %>
       </td>
     </tr>
   <% end %>
