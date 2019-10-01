@@ -1,0 +1,17 @@
+<%= form_with model: @teacher do |f| %>
+  <%= render(partial: "error_refer/error", locals: { target: @teacher }) %>
+<table summary="Teacher form fields">
+  <tr>
+    <th>Name</th>
+    <td><%= f.text_field :name, required: true  %></td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td><%= f.email_field :email, required: true  %></td>
+  </tr>
+</table>
+
+<div class="form-buttons">
+  <%= f.submit("Submit") %>
+</div>
+<% end %>

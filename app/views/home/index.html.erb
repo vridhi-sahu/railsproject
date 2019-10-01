@@ -1,19 +1,21 @@
 <% @page_title = "Assignment" %>
-<h1><%= @page_title %></h1><br>
+  <h1><%= @page_title %></h1><br>
 <div>
     <%= link_to("Download csv records", users_load_path(format: :csv), class: "btn btn-primary") %>
 </div>
-<br>
+
 <div>
     <%= link_to("Download pdf records", employees_load_path(format: :pdf), class: "btn btn-primary") %>
 </div>
-<br>
+
 <div>
   <%= link_to("Student Records fire mail", students_mail_path, class: "btn btn-primary") %>
-</div><br>
+</div>
+
 <div>
   <%= link_to("click to view images", images_path, class: "btn btn-primary") %>
-</div><br>
+</div>
+
 <div>
   <%= link_to("CRUD operations on teachers", teachers_path, class: "btn btn-primary") %>
-</div><br>
+</div>
